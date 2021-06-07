@@ -1,0 +1,12 @@
+name: Check Pull Request
+on: pull_request
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Linter
+        uses: github/super-linter@v4.1.0
