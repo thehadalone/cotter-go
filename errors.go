@@ -14,7 +14,9 @@ type ErrorHandler func(w http.ResponseWriter, r *http.Request, e error)
 
 type e string
 
-func (e) Error() string { return "" }
+func (e) Error() string {
+	return ""
+}
 
 func unauthorized(message string) error {
 	return fmt.Errorf("%s%w", message, ErrUnauthorized)
