@@ -16,3 +16,8 @@ func UserID(ctx context.Context) string {
 
 	return ""
 }
+
+// SetUserID returns a copy of the context with the provided Cotter user ID.
+func SetUserID(ctx context.Context, userID string) context.Context {
+	return context.WithValue(ctx, userIDKey{}, userID)
+}

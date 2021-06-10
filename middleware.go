@@ -40,7 +40,7 @@ func NewMiddleware(ctx context.Context, apiKeyID string, opts ...Option) (func(h
 				return
 			}
 
-			next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), userIDKey{}, userID)))
+			next.ServeHTTP(w, r.WithContext(SetUserID(r.Context(), userID)))
 		})
 	}, nil
 }
