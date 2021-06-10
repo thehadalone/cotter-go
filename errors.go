@@ -25,6 +25,7 @@ func unauthorized(message string) error {
 func defaultErrorHandler(w http.ResponseWriter, r *http.Request, e error) {
 	if errors.Is(e, ErrUnauthorized) {
 		http.Error(w, e.Error(), http.StatusUnauthorized)
+
 		return
 	}
 

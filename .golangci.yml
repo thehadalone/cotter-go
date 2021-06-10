@@ -1,0 +1,20 @@
+run:
+  tests: false
+
+linters-settings:
+  goimports:
+    local-prefixes: github.com/thehadalone/cotter-go
+
+linters:
+  enable-all: true
+  disable:
+    - scopelint
+    - interfacer
+    - golint
+    - maligned
+    - gci
+    - exhaustivestruct
+    - wrapcheck
+
+issues:
+  exclude-use-default: false

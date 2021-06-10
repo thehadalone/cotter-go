@@ -1,3 +1,4 @@
+// Package cotter contains HTTP middleware for https://www.cotter.app authentication.
 package cotter
 
 import (
@@ -31,12 +32,14 @@ func NewMiddleware(ctx context.Context, apiKeyID string, opts ...Option) (func(h
 			keySet, err := autoRefresh.Fetch(r.Context(), keySetURL)
 			if err != nil {
 				options.errorHandler(w, r, err)
+
 				return
 			}
 
 			userID, err := userID(keySet, r, apiKeyID)
 			if err != nil {
 				options.errorHandler(w, r, err)
+
 				return
 			}
 

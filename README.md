@@ -44,3 +44,8 @@ handler := func(w http.ResponseWriter, r *http.Request) {
     cotterID := cotter.UserID(r.Context())
 }
 ```
+
+### Set Cotter user ID to the context.
+```
+    ctx := cotter.SetUserID(context.Background(), "42")
+```
